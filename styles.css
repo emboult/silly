@@ -1,0 +1,115 @@
+:root {
+  --sign-max-width: 260px;
+  --vector-size: 420px;
+  --vector-scale: 1; /* 1 = 100% */
+  --vector-rotation: 0deg;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-image: url("/index images/tilelol.gif");
+  opacity: 1;
+  mix-blend-mode: difference;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+
+.forest{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/index images/glass.jpg') repeat;
+    filter: url(#ForestWave);
+    scale: 2;
+    background-size: cover;
+    z-index: 1;
+    mix-blend-mode: difference;
+    opacity: 0.7;
+}
+
+.eye{
+    position: fixed;
+    bottom: 10%;
+    left: 65%;
+    scale: 0.8;
+    width: 300px;
+    height: auto;
+    z-index: 2;
+    filter: url(#eyeWave);;
+    animation: floaty 5s ease-in-out infinite;
+    opacity: 0.9;
+    mix-blend-mode: hard-light;
+}
+
+
+
+.floating-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  mix-blend-mode: normal ;
+}
+
+.floating-center:focus {
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
+}
+
+.floating-center img {
+  display: block;
+  max-width: var(--sign-max-width);
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  animation: floaty 4s ease-in-out infinite;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  will-change: transform;
+  background: transparent;
+}
+
+.floating-center:hover img,
+.floating-center:focus img {
+  transform: translateY(-8px) scale(1.03);
+}
+
+@keyframes floaty {
+  0%   { transform: translateY(-6px); }
+  50%  { transform: translateY(6px); }
+  100% { transform: translateY(-6px); }
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --sign-max-width: 180px;
+    --vector-size: 260px;
+    --vector-scale: 5;
+  }
+}
+
+@media (min-width: 420px) {
+  :root {
+    --vector-scale: clamp(0.8, 6vw, 1.2);
+  }
+}

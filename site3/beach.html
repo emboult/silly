@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>let's go to the beach-each</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>bitch</title>
+
+    <link rel="stylesheet" href="beach.css">
+</head>
+<body>
+
+
+    <svg width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="wave" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.012 0.08" numOctaves="2" seed="3" result="noise">
+        <animate attributeName="baseFrequency"
+                 dur="6s"
+                 values="0.012 0.08;0.02 0.11;0.012 0.08"
+                 repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale"
+                 dur="6s"
+                 values="25;35;25"
+                 repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+  </svg>
+
+     <audio autoplay loop>
+  <source src="https://files.catbox.moe/5ter2t.mp3" type="audio/mpeg">
+  </audio>
+<img class="ocean" src="ocn.gif" alt="Ocean" />
+<img class="towel" src="towel.webp" alt="Towel" />
+<img class="car" src="car.png" alt="car" />
+<a href="/site4/space.html">
+  <img class="car" src="car.png" alt="car" />
+</a>
+<img class="overlay" src="overl2.jpg" alt="overlay" />
+<img class="water" src="overl.jpg" alt="water" />
+</body>
+</html>

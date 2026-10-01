@@ -1,0 +1,48 @@
+:root {
+  --tile-size: 60px;
+  --sign-max-width: 260px;
+  --vector-size: 420px;
+  --vector-scale: 1;
+  --vector-rotation: 0deg;
+}
+
+/* hide audio element */
+audio { display: none; }
+
+html, body { height: 100%; margin: 0; }
+body {
+  background-color: #9e0d0d;
+  background-image: url('/site2/bg.gif');
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: var(--tile-size);
+  min-height: 100vh;
+  overflow: hidden; 
+}
+
+
+#container img {
+  position: absolute;
+  width: 80px; /* or whatever size you want */
+  opacity: 0.8;
+  pointer-events: none; /* prevent accidental clicks */
+}
+
+img.cat-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: color-burn;
+}

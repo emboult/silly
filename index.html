@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enter the cat heaven</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <img class="mist" src="index images/tilelol.gif" alt="" aria-hidden="true" />
+
+  <img class="forest" src="index images/glass.jpg" alt="" aria-hidden="true" />
+
+  <img class="vector-bg" src="index images/vector.svg" alt="" aria-hidden="true" />
+
+  <a class="floating-center" href="site1/cat.html" aria-label="Go to next page" tabindex="0">
+    <img src="index images/stone_sign2.gif" alt="Stone sign" />
+  </a>
+  <a class="eye" href="/gallery/gallery.html">
+    <img src="index images/eye.png" alt="Eye" />
+  </a>
+  <svg width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="eyeWave" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence id="eyeTurb" type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" seed="5" result="noise">
+        <animate attributeName="baseFrequency"
+                     dur="4s"
+                     values="0.01 0.02;0.015 0.03;0.01 0.02"
+                     repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale"
+                     dur="4s"
+                     values="8;12;8"
+                     repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+  </svg>
+    <svg width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="ForestWave" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence id="eyeTurb" type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" seed="5" result="noise">
+        <animate attributeName="baseFrequency"
+                     dur="2s"
+                     values="0.012 0.08;0.02 0.11;0.012 0.08"
+                     repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale"
+                     dur="2s"
+                     values="8;12;8"
+                     repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+  </svg>
+  
+  
+  <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Wisp - Bon P'ont" width="0" height="0" src="https://www.youtube.com/embed/jGZGbmjkSN4?si=PWmV-fEzr9gDHJrh&amp;"></iframe>
+  
+</body>
+</html>

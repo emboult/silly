@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>wow</title>
+
+
+    <link rel="stylesheet" href="/site2/wow.css">
+</head>
+<body>
+   <audio autoplay loop>
+  <source src="https://files.catbox.moe/aafa45.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="container"></div>
+<script>
+const container = document.getElementById("container");
+const IMG_SRC = "ball.gif";
+const COUNT = 50;
+
+function randomBetween(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function moveImage(img) {
+  function animate() {
+    img.style.left = randomBetween(0, window.innerWidth - 80) + "px";
+    img.style.top = randomBetween(0, window.innerHeight - 80) + "px";
+
+    const duration = randomBetween(2, 6);
+    img.style.transition = duration + "s linear";
+
+    setTimeout(animate, duration * 1000);
+  }
+
+  animate();
+}
+
+function spawnImages() {
+  for (let i = 0; i < COUNT; i++) {
+    const img = document.createElement("img");
+    img.src = IMG_SRC;
+
+    container.appendChild(img);
+    moveImage(img);
+  }
+}
+
+spawnImages();
+</script>
+
+<img src="overlay.avif" alt="" class="overlay">
+
+<a href="/site3/beach.html">
+  <img src="cat2.gif" alt="cat" class="cat-image">
+</a>
+  
+</body>
+</html>

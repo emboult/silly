@@ -1,0 +1,76 @@
+body {
+  background-color: #000;
+  background-image: url('/site3/sand.gif');
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: var(--tile-size);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.water {
+  position: fixed;
+  inset: 0;                 
+  width: 110%;
+  height: 100vh;
+  object-fit: cover;       
+  mix-blend-mode: overlay;
+  opacity: 90%;
+  filter: url(#wave) saturate(100%) sepia(0.3) hue-rotate(150deg) brightness(1.2) contrast(1.5);
+  animation: drift 14s ease-in-out infinite;
+  will-change: filter, transform;
+  pointer-events: none;
+
+}
+
+@keyframes drift {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-2%); }
+  100% { transform: translateX(0); }
+}
+
+.water {
+  animation: drift 14s ease-in-out infinite;
+}
+
+.ocean {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(60%);
+      width: 100%; /* adjust as needed */
+      mix-blend-mode: lighten;
+      filter: saturate(0%) sepia(0.3) hue-rotate(180deg) brightness(0.9) contrast(1.9);
+    }
+
+
+    
+.towel{
+        position: absolute;
+        scale: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -200%);
+        width: 200px; /* adjust size as needed */
+        mix-blend-mode: normal;
+}
+
+.car {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -200%);
+      width: 150px; /* adjust size as needed */
+      mix-blend-mode: normal;
+    }
+
+.overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: multiply;
+      opacity: 0.8;
+      pointer-events: none;  /* allow clicks through */
+}
