@@ -1,0 +1,35 @@
+body {
+  background-color: #000;
+  background-image: url('/site4/spaceship/space-bg.gif');
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: var(--tile-size);
+  min-height: 100vh;
+  overflow: hidden; /*no scroll*/
+}
+
+.center-wrapper {
+/*position*/
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  position:fixed;
+ 
+  /*flexbox*/
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.alienkitty{
+  /*prevent image from bursting out of screen when zooming in*/
+  max-width: 90vw;
+  max-height: 90vh;
+
+  /*original aspect ratio*/
+  object-fit: contain;
+}
