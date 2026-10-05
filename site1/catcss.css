@@ -17,63 +17,36 @@ body {
   background-position: 0 0;
   background-size: var(--tile-size);
   min-height: 100vh;
+  overflow:hidden;
 }
 
-img {
-  display: block;
-  margin: 1.5rem auto;           
-  width: 50%;                     
-  max-width: calc(var(--sign-max-width) * 2);
-  height: auto;
-  transform-origin: center;
-  mix-blend-mode: lighten;
+.mid {
+/*position*/
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position:fixed;
+ 
+  /*flexbox*/
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
 }
 
+.kaltsa{
+  /*prevent image from bursting out of screen when zooming in*/
+  max-width: 90vw;
+  max-height: 80vh;
 
-.pap-wrap {
-  position: relative;
-  width: 50%;
-  max-width: 520px;
-  margin: 1.5rem auto;
+  /*original aspect ratio*/
+  object-fit: contain;
 }
 
-/* ensure base image scales */
-.pap-wrap img { display: block; width: 100%; height: auto; }
-
-/* clickable image sits below overlays */
-.pap-link { position: relative; z-index: 1; }
-
-/* overlays stacked exactly on top, not interactive */
-.pap-overlay {
-  position: absolute;
-  inset: 0;                  /* top:0; right:0; bottom:0; left:0; */
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  opacity: 1;
-  transition: transform 240ms ease, opacity 240ms ease, filter 240ms ease;
+p{
+  color:white;
+  font-size: 80px;
+  margin: 0 0 -90px;
 }
-
-/* tweak each overlay differently */
-.pap-overlay.overlay--1 {
-  mix-blend-mode: overlay;
-  transform: translate(0px, 0px) scale(1);
-  filter: none;
-  opacity: 1;
-}
-
-.pap-overlay.overlay--2 {
-  mix-blend-mode: color;
-  transform: translate(-6px, -6px) scale(0.985);
-  filter: hue-rotate(20deg) saturate(1);
-  opacity: 0.2;
-}
-
-.pap-overlay.overlay--3 {
-  mix-blend-mode: hue;
-  transform: translate(6px, 6px) scale(1);
-  filter: blur(.6px) contrast(1.05);
-  opacity: 0.75;
-}
-
