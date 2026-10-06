@@ -51,37 +51,44 @@ body {
       margin: 0;
       min-height: 100vh;
       overflow: hidden;
-      background: red;
+      background: black;
     }
 
     /* Full-screen div: animated checkerboard + tiled PNG on top */
-    .grid {
+  .grid {
       position: fixed;
       inset: 0;
       z-index: -1;
       pointer-events: none;
 
-      /* Layer 1 (top): the PNG, tiled. Layer 2 (bottom): animated checkerboard. */
-      background-image:
-        url("alienkitty.png"),
-        repeating-conic-gradient(
+      /* Checkerboard stays on .grid */
+      background-image: repeating-conic-gradient(
           from 45deg,
           var(--tile-a) 0% 25%,
           var(--tile-b) 0% 50%
-        );
-
-      /* Each layer gets its own size and repeat */
-      background-size: 80px 80px, 160px 160px;
-      background-repeat: repeat, repeat;
-      background-position: 0 0, 0 0;
-
+      );
+      background-size: 160px 160px;
       animation: tileWave 6s linear infinite;
-    }
+  }
+
+  .grid::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      /* GIF on the pseudo-element */
+      background-image: url("space-bg.gif");
+      background-size: 80px 80px;
+      background-repeat: repeat;
+
+      /* NOW the blend actually happens: GIF vs. checkerboard */
+      mix-blend-mode: difference;
+  }
 
     @keyframes tileWave {
-      0%   { --tile-a: red;    --tile-b: blue;   }
-      25%  { --tile-a: yellow; --tile-b: green;  }
-      50%  { --tile-a: blue;   --tile-b: red;    }
+      0%   { --tile-a: black;    --tile-b: black;   }
+      25%  { --tile-a: red; --tile-b: blue;  }
+      50%  { --tile-a: black;   --tile-b: black;    }
       75%  { --tile-a: green;  --tile-b: yellow; }
-      100% { --tile-a: red;    --tile-b: blue;   }
+      100% { --tile-a: black;    --tile-b: black;   }
     }
