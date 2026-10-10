@@ -15,15 +15,26 @@ body {
   width: 100vw;
   height: 100vh;
   position:fixed;
+
+  scale: 2;
+}
+
+.dancediv{
+  /*position*/
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position:fixed;
  
   /*flexbox*/
   display:flex;
   justify-content: center;
   align-items: center;
 
-  z-index: 9999;
+  z-index: 800;
 
-  scale: 2;
+  scale: 0.4;
 }
 
 .dance{
@@ -34,3 +45,23 @@ body {
   /*original aspect ratio*/
   object-fit: contain;
 }
+.island-wrapper{
+
+
+  top: 0;
+  left: 0;
+  width: 180vw;
+  height: 220vh;
+  position:fixed;
+
+  z-index: 10;
+  scale: 0.5;
+  opacity: 0.7;
+}
+
+.island{
+
+  /*original aspect ratio*/
+  object-fit: contain;
+}
+
